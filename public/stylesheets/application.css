@@ -12,6 +12,10 @@ pre {
   font-size: 11px;
 }
 
+img {
+  border: none;
+}
+
 a { color: #000; }
 a:visited { color: #666; }
 a:hover { color: #fff; background-color:#000; }
@@ -71,4 +75,40 @@ div.progressBar div.background {
   height: 18px;
   width: 0%;
 }
+
+div.table {
+  display: table;
+}
+
+div.row {
+  display: table-row;
+}
+
+div.cell {
+  display: table-cell;
+}
+
+ul.lighttable {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  margin-top: 10px;
+}
+
+.lighttable li {
+  padding: 10px;
+  margin-right:  10px;
+  width: 100px;
+  height: 160px;
+  float: left;
+  background-color: #CCCCCC;
+}
+
+.lighttable li div.thumb {
+  width: 100px;
+  height: 100px;
+  padding: 0px;
+  text-align: center;
+}
+
 

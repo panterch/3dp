@@ -1,0 +1,13 @@
+%h1 Show photo
+%p
+  = @photo.name
+%p
+  = @photo.description
+
+%h2 Scaled image for gallery display
+=image_tag(@photo.public_filename(:gallery))
+
+%h2 Original image
+=image_tag(@photo.public_filename)
+
+=link_to "Back to #{@category.title}", category_photos_path(@category)

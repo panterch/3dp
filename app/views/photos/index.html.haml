@@ -1,12 +1,15 @@
 %h1 Listing photos
 
-= link_to 'Upload new image', new_category_photo_path
+= link_to 'Click here to upload new photo', new_category_photo_path
 
-.table
+%ul.lighttable
   -@photos.each do |photo|
-    .row
-      .cell
-        = link_to "image #{photo.id}", photo_path(@category, photo)
-      .cell
-        = link_to 'Delete', photo, :confirm => 'Are you sure?', :method => :delete
+    %li
+      .thumb
+        = link_to image_tag(photo.public_filename(:thumb)), category_photo_path(@category, photo)
+      %p
+        = photo.name
+      %p
+        = link_to 'Show', category_photo_path(@category, photo)
+        = link_to 'Delete', category_photo_path(@category, photo), :confirm => 'Are you sure?', :method => :delete
 
