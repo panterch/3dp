@@ -1,0 +1,8 @@
+%h1 Category
+  
+.table
+  -@categories.each do |cat|
+    .row
+      .cell
+        = link_to cat.title, category_photos_path(cat)
+

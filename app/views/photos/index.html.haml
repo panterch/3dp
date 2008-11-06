@@ -1,0 +1,12 @@
+%h1 Listing photos
+
+= link_to 'Upload new image', new_category_photo_path
+
+.table
+  -@photos.each do |photo|
+    .row
+      .cell
+        = link_to "image #{photo.id}", photo_path(@category, photo)
+      .cell
+        = link_to 'Delete', photo, :confirm => 'Are you sure?', :method => :delete
+

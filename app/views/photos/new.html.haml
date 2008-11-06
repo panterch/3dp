@@ -1,0 +1,10 @@
+%h1 New photo
+
+- form_for @photo, :html => { :multipart => true }, :url => category_photos_path(@category) do |f|
+  = f.error_messages
+  = f.label :name, 'Name'
+  = f.text_field :name
+  = f.label :description, 'Description'
+  = f.text_area :description
+  = f.file_field :uploaded_date
+  = submit_tag 'Upload image'
