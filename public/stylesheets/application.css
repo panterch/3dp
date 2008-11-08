@@ -1,7 +1,7 @@
 body { background-color: #fff; color: #333; }
 
 body, p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
+  font-family: Georgia, Times, Serif;;
   font-size:   13px;
   line-height: 18px;
 }
@@ -16,9 +16,11 @@ img {
   border: none;
 }
 
+h1 {
+  padding-top: 30px;
+}
+
 a { color: #000; }
-a:visited { color: #666; }
-a:hover { color: #fff; background-color:#000; }
 
 .fieldWithErrors {
   padding: 2px;
@@ -88,6 +90,25 @@ div.cell {
   display: table-cell;
 }
 
+#menu {
+  list-style-type: none;
+  margin-left: 0px;
+  padding-left: 0px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid;
+}
+
+#menu li {
+  padding-right: 5px;
+  float: left;
+}
+
+#menu li:last-child {
+  float: none;
+  clear: right;
+}
+  
+
 ul.lighttable {
   list-style-type: none;
   margin: 0px;
@@ -97,18 +118,33 @@ ul.lighttable {
 
 .lighttable li {
   padding: 10px;
+  margin-bottom: 10px;
   margin-right:  10px;
-  width: 100px;
-  height: 160px;
+  width: 150px;
+  height: 250px;
   float: left;
-  background-color: #CCCCCC;
+  background-color: #DDD;
+  text-align: center;
 }
 
 .lighttable li div.thumb {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   padding: 0px;
-  text-align: center;
+  vertical-align: middle;
+}
+
+.lighttable li p.title {
+  height: 50px;
+  overflow: hidden;
+}
+
+.lighttable li p.action {
+  height: 50px;
+}
+
+.textinput {
+  width: 300px;
 }
 
 

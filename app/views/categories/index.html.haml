@@ -1,8 +1,14 @@
 %h1 Category
   
-.table
+%ul
   -@categories.each do |cat|
-    .row
-      .cell
-        = link_to cat.title, category_photos_path(cat)
+    %li
+      = link_to cat.title, category_path(cat)
+      ,
+      = pluralize cat.photos.count, 'Photo'
+      [
+      = link_to 'html', category_path(cat)
+      ] [
+      = link_to 'xml', formatted_category_path(:id => cat, :format => :xml)
+      ]
 

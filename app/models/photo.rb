@@ -6,7 +6,7 @@ class Photo < ActiveRecord::Base
                  :storage => :file_system,
                  :max_size => 10.megabyte,
                  :processor => :Rmagick,
-                 :thumbnails => { :gallery => '600x600>', :thumb => '100x100>' }
+                 :thumbnails => { :gallery => '300', :thumb => '150x150>' }
 
   #validates_presence_of :category_id, :name, :description,
   #                      :unless => Proc.new { |p| p.parent_id.nil? }

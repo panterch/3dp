@@ -2,10 +2,6 @@ class PhotosController < ApplicationController
 
   before_filter :prepare_category
 
-  def index
-    @photos = @category.photos
-  end
-
   def show
     @photo = Photo.find(params[:id])
   end
@@ -18,7 +14,8 @@ class PhotosController < ApplicationController
     # Standard, one-at-a-time, upload action
     @photo = @category.photos.build(params[:photo])
     if @photo.save
-      redirect_to category_photos_url(@category)
+      flash[:notice] = "Image successfully created"
+      redirect_to category_url(@category)
     else
       render :action => :new
     end
@@ -27,14 +24,14 @@ class PhotosController < ApplicationController
   def destroy
     @photo = Photo.find(params[:id])
     @photo.destroy
-    redirect_to category_photos_url(@category)
+    flash[:notice] = "Image destroyed"
+    redirect_to category_url(@category)
   end
 
   protected
     
     def prepare_category
       @category = Category.find(params[:category_id])
-      @categories = Category.all
     end
 
 end

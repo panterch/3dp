@@ -2,16 +2,17 @@
 
 - form_for @photo, :html => { :multipart => true }, :url => category_photos_path(@category) do |f|
   = f.error_messages
-  = f.label :name, 'Name:'
-  %br
-  = f.text_field :name
-  %br
-  = f.label :description, 'Description:'
-  %br
-  = f.text_area :description
-  %br
+  %p
   = f.label :uploaded_data, 'Select an image on your computer:'
   %br
   = f.file_field :uploaded_data, :accept => 'image/png,image/gif,image/jpeg'
+  %p
+  = f.label :name, 'Enter a name:'
   %br
+  = f.text_field :name, :class => 'textinput'
+  %p
+  = f.label :description, 'Enter a Description:'
+  %br
+  = f.text_area :description, :class => 'textinput'
+  %p
   = submit_tag 'Save'

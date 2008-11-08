@@ -1,13 +1,16 @@
-%h1 Show photo
-%p
-  = @photo.name
-%p
-  = @photo.description
+%h1= "Showing photo &laquo;#{h(@photo.name)}&raquo;"
 
-%h2 Scaled image for gallery display
+%h3 Category
+=link_to h(@category.title), category_photos_path(@category)
+
+%h3 Description
+= h(@photo.description)
+
+%h3 Scaled image for gallery display
 =image_tag(@photo.public_filename(:gallery))
 
-%h2 Original image
+%h3 Original image
 =image_tag(@photo.public_filename)
 
-=link_to "Back to #{@category.title}", category_photos_path(@category)
+%p
+  =link_to "Back to #{h(@category.title)}", category_photos_path(@category)
