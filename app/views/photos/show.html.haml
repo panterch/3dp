@@ -1,7 +1,7 @@
 %h1= "Showing photo &laquo;#{h(@photo.name)}&raquo;"
 
 %h3 Category
-=link_to h(@category.title), category_photos_path(@category)
+=link_to h(@category.title), category_path(@category)
 
 %h3 Description
 = h(@photo.description)
