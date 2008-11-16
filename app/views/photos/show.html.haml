@@ -9,6 +9,14 @@
 %h3 Scaled image for gallery display
 =image_tag(@photo.public_filename(:gallery))
 
+%h3 Video
+-if @photo.video
+  =link_to @photo.video.filename, @photo.video.public_filename
+-else
+  None you, but you may
+  = link_to 'attach', new_category_photo_video_path(@category, @photo)
+  one.
+
 %h3 Original image
 =image_tag(@photo.public_filename)
 

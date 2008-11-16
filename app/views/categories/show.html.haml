@@ -6,11 +6,14 @@
 %ul.lighttable
   -@category.photos.each do |photo|
     %li
+      %p.title
+        = link_to h(photo.name), category_photo_path(@category, photo)
       .thumb
         = link_to image_tag(photo.public_filename(:thumb)), category_photo_path(@category, photo)
-      %p.title
-        = h(photo.name)
-      %p.action
-        = link_to 'Show', category_photo_path(@category, photo)
-        = link_to 'Delete', category_photo_path(@category, photo), :confirm => 'Are you sure?', :method => :delete
+      %p.video
+        Video:
+        = photo.video ? photo.video.filename : 'None'
+
+      = link_to 'Attach video', new_category_photo_video_path(@category, photo), :class => 'video'
+      = link_to 'Delete this Photo', category_photo_path(@category, photo), :confirm => 'Are you sure?', :method => :delete, :class => 'delete'
 

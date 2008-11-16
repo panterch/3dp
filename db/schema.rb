@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081106145742) do
+ActiveRecord::Schema.define(:version => 20081116101448) do
 
   create_table "categories", :force => true do |t|
     t.string   "title"
@@ -30,6 +30,19 @@ ActiveRecord::Schema.define(:version => 20081106145742) do
     t.string   "name"
     t.text     "description"
     t.integer  "category_id"
+  end
+
+  create_table "videos", :force => true do |t|
+    t.integer  "parent_id"
+    t.string   "content_type"
+    t.string   "filename"
+    t.string   "thumbnail"
+    t.integer  "size"
+    t.integer  "width"
+    t.integer  "height"
+    t.integer  "photo_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

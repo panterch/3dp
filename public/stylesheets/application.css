@@ -54,26 +54,6 @@ a { color: #000; }
   list-style: square;
 }
 
-div.uploadStatus {
-  margin: 5px;
-}
-
-div.progressBar {
-  margin: 5px;
-}
-
-div.progressBar div.border {
-  background-color: #fff;
-  border: 1px solid gray;
-  width: 100%;
-}
-
-div.progressBar div.background {
-  background-color: #333;
-  height: 18px;
-  width: 0%;
-}
-
 div.table {
   display: table;
 }
@@ -121,27 +101,138 @@ ul.lighttable {
   height: 250px;
   float: left;
   background-color: #DDD;
-  text-align: center;
 }
 
 .lighttable li div.thumb {
   width: 150px;
-  height: 150px;
+  height: 100px;
   padding: 0px;
   vertical-align: middle;
+  text-align: center;
 }
 
 .lighttable li p.title {
-  height: 50px;
+  height: 15px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.lighttable li p.video {
+  height: 35px;
   overflow: hidden;
 }
 
-.lighttable li p.action {
-  height: 50px;
+a.delete {
+  background-image: url('/images/tango/22x22/actions/edit-delete.png');
+  background-repeat: no-repeat;
+  display: block;
+  height: 22px;
+  padding-left: 27px;
+}
+
+a.video {
+  background-image: url('/images/tango/22x22/mimetypes/video-x-generic.png');
+  background-repeat: no-repeat;
+  display: block;
+  height: 22px;
+  padding-left: 27px;
 }
 
 .textinput {
   width: 300px;
 }
 
+/**** SWFUpload progress bar styles *************************************/
 
+div.uploadStatus {
+  margin: 5px;
+}
+ 
+div.progressBar {
+  margin: 5px;
+}
+ 
+div.progressBar div.border {
+  background-color: #fff;
+  border: 1px solid gray;
+  width: 100%;
+}
+ 
+div.progressBar div.background {
+  background-color: #333;
+  height: 18px;
+  width: 0%;
+}
+ 
+.progressWrapper {
+  width: 357px;
+  overflow: hidden;
+}
+.progressContainer {
+  margin: 5px;
+  padding: 4px;
+  
+  border: solid 1px #E8E8E8;
+  background-color: #F7F7F7;
+  
+  overflow: hidden;
+}
+ 
+.progressName {
+  font-size: 8pt;
+  font-weight: bold;
+  color: #555555;
+  
+  width: 323px;
+  height: 14px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.progressBarInProgress,
+.progressBarComplete,
+.progressBarError {
+  font-size: 0px;
+  width: 0%;
+  height: 2px;
+  background-color: blue;
+  margin-top: 2px;
+}
+.progressBarComplete {
+  width: 100%;
+  background-color: green;
+  visibility: hidden;
+}
+.progressBarError {
+  width: 100%;
+  background-color: red;
+  visibility: hidden;
+}
+.progressBarStatus {
+  margin-top: 2px;
+  width: 337px;
+  font-size: 7pt;
+  font-family: Verdana;
+  text-align: left;
+  white-space: nowrap;
+}
+a.progressCancel,
+a.progressCancel:link,
+a.progressCancel:active,
+a.progressCancel:visited,
+a.progressCancel:hover
+{
+  font-size: 0px;
+  display: block;
+  height: 14px;
+  width: 14px;
+ 
+  background-image: url(/images/cancelbutton.gif);
+  background-repeat: no-repeat;
+  background-position: -14px 0px;
+  float: right;
+}
+a.progressCancel:hover
+{
+  background-position: 0px 0px;
+}

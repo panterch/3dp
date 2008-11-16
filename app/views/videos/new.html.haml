@@ -1,0 +1,13 @@
+%h1 Attach or replace video
+%p
+  
+  ="Please select an flv video to add to the photo &laquo;#{h(@photo.name)}&raquo;."
+
+%form
+  %button{:id=>"btnBrowse", :type=>"button", :onclick=>"swfu.selectFiles(); this.blur();" }
+    %img{:src=>"/images/page_white_add.png"}
+      Select video
+
+#divFileProgressContainer
+
+=javascript_tag("var swfu = renderSWFUpload('#{category_photo_video_path('_swfupload_session_id' => session.session_id)}')")
