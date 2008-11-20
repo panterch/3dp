@@ -8,4 +8,6 @@ db/*.db
 vendor/rails
 public/photos
 public/videos
+public/index.html
+public/*.swf
 *.swp
