@@ -12,9 +12,11 @@ class VideosController < ApplicationController
       @photo.video.destroy
       @photo.reload
     end
-    @video = @photo.build_video(:uploaded_data => params[:Filedata])
-    @video.save!
-    flash[:notice] = "Video successfully attached"
+    unless params[:Filedata].blank?
+      @video = @photo.build_video(:uploaded_data => params[:Filedata])
+      @video.save!
+      flash[:notice] = "Video successfully attached"
+    end
     respond_to do |format|
       format.html { redirect_to category_path(@category) }
       format.js
