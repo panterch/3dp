@@ -16,6 +16,7 @@ class VideosController < ApplicationController
     @video.save!
     flash[:notice] = "Video successfully attached"
     respond_to do |format|
+      format.html { redirect_to category_path(@category) }
       format.js
     end
   end

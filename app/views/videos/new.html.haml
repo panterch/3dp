@@ -1,13 +1,23 @@
-%h1 Attach or replace video
-%p
-  
-  ="Please select an flv video to add to the photo &laquo;#{h(@photo.name)}&raquo;."
+%h1 Attach or replace video (classic variant)
 
-%form
-  %button{:id=>"btnBrowse", :type=>"button", :onclick=>"swfu.selectFiles(); this.blur();" }
-    %img{:src=>"/images/page_white_add.png"}
-      Select video
+- form_tag category_photo_video_path(@category, @photo), :multipart => true do
+  = hidden_field_tag(:category_id, @category.id)
+  = hidden_field_tag(:photo_id, @photo.id)
+  = file_field_tag('Filedata', :accept => 'video/x-flv')
+  = submit_tag
 
-#divFileProgressContainer
+%hr
 
-=javascript_tag("var swfu = renderSWFUpload('#{category_photo_video_path('_swfupload_session_id' => session.session_id)}')")
+-# %h1 Attach or replace video (swfupload)
+-# %p
+-#   
+-#   ="Please select an flv video to add to the photo &laquo;#{h(@photo.name)}&raquo;."
+-# 
+-# %form
+-#   %button{:id=>"btnBrowse", :type=>"button", :onclick=>"swfu.selectFiles(); this.blur();" }
+-#     %img{:src=>"/images/page_white_add.png"}
+-#       Select video
+-# 
+-# #divFileProgressContainer
+-# 
+-# =javascript_tag("var swfu = renderSWFUpload('#{category_photo_video_path('_swfupload_session_id' => session.session_id)}')")
